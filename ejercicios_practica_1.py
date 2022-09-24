@@ -1,7 +1,7 @@
 # Archivos [Python]
 # Ejercicios de práctica
 
-# Autor: Inove Coding School
+# Autor: Edwin Yepez
 # Version: 2.0
 
 # IMPORTANTE: NO borrar los comentarios
@@ -17,20 +17,20 @@ def ej1():
     # Crear un diccionario vacio
     # el diccionario vacio debe llamarse "stock"
     
-    # stock = ....
+    stock = {}
 
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
     # tuercas = 150
     # arandelas = 300
-
+    stock = {'tornillos' : 100, 'tuercas' : 150, 'arandelas' : 300 }
     # Los nombres tornillos, tuercas y arandelas
     # son las claves (keys) del diccionario
     # mientras que las cantidades son los valores (values)
 
     # Una vez armado el diccionario imprimirlo en pantalla con print
-
+    print(stock)  
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
 
@@ -40,11 +40,16 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
-    # while True.....
+    while True:
+        producto = input('Que producto desea agregar al stock: ')
+        if producto == 'FIN':
+            break
+        
+
     
     # Paso 2:
     # Dentro de ese bucle consultar al usuario por consola
@@ -54,7 +59,15 @@ def ej2():
     #   - Si el usuario ingresa un producto no definido en el stock
     #   se debe enviar un mensaje de error. (si desea investigar esto
     #   se resuelve muy bien utilizando el operador "in" con diccionarios)
+        if producto in stock:
+            agregar = int(input('Registre cuanto stock desea agregar al producto: '))
+            stock[producto] += agregar
+            print('Su stock actual es: ')
+            print(stock)
+        else:
+            print('ERROR!! NO EXISTE EL PRODUCTO EN NUESTRO STOCK!!')
 
+        
     # Paso 3:
     # Luego de haber ingresado el producto se debe ingresar por consola
     # cuanto stock de ese producto se desea agregar al stock.
